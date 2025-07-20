@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: user-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task4_spring_boot
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  kafka:
+    producer:
+      bootstrap-servers:
+        - localhost:9092
+        - localhost:9094
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      # retries: 10
+      # properties:
+      #   retry.backoff.ms: 1000
+      properties:
+        delivery.timeout.ms: 10000
+        linger.ms: 0
+        request.timeout.ms: 5000
+        enable.idempotence: true
+        max.in.flight.request.per.connection: 5
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 0
