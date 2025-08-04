@@ -13,8 +13,8 @@ spring:
       ddl-auto: update
 
   kafka:
-    bootstrap-servers: kafka-1:9090,kafka-2:9090,kafka-3:9090
     producer:
+      bootstrap-servers: kafka-1:9090,kafka-2:9090,kafka-3:9090
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
       acks: all
