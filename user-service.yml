@@ -3,7 +3,7 @@ spring:
     name: user-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/task4_spring_boot
+    url: jdbc:postgresql://host.docker.internal:5432/task4_spring_boot
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
