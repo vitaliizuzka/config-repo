@@ -4,9 +4,9 @@ spring:
 
   kafka:
     consumer:
-      bootstrap-servers:
-        - localhost:9092
-        - localhost:9094
+      bootstrap-servers: kafka-1:9090,kafka-2:9090,kafka-3:9090
+#        - localhost:9092
+#        - localhost:9094
       # key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       # value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       group-id: user-create-delete-events
